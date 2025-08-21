@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kussa – Personal Branding</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Fonts (opsional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ai1: #2dd4bf;
+            /* teal */
+            --ai2: #60a5fa;
+            /* blue */
+            --ai3: #a78bfa;
+            /* violet */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        }
+
+        /* Hero “AI glow” */
+        .ai-glow {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .ai-glow::before {
+            content: "";
+            position: absolute;
+            inset: -20% -10% -10% -10%;
+            background: radial-gradient(40% 40% at 30% 40%, var(--ai2) 0%, transparent 60%),
+                radial-gradient(30% 30% at 70% 60%, var(--ai3) 0%, transparent 60%),
+                radial-gradient(25% 25% at 50% 20%, var(--ai1) 0%, transparent 60%);
+            filter: blur(60px);
+            opacity: .45;
+            z-index: -1;
+            animation: floaty 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes floaty {
+            0% {
+                transform: translateY(-10px)
+            }
+
+            100% {
+                transform: translateY(10px)
+            }
+        }
+
+        /* Subtle AI grid */
+        .ai-grid {
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, .06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, .06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            mask-image: radial-gradient(circle at 50% 40%, black, transparent 70%);
+        }
+
+        /* Typing effect */
+        .typing-line {
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid currentColor;
+            animation: caret-blink .9s steps(1) infinite;
+        }
+
+        @keyframes caret-blink {
+            50% {
+                border-color: transparent
+            }
+        }
+
+        /* Active link style */
+        .nav-link.active {
+            color: rgb(37 99 235);
+            /* blue-600 */
+            font-weight: 600;
+        }
+
+        /* Section dividers */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, .6), transparent);
+        }
+
+        /* Fix offset for fixed navbar */
+        section {
+            scroll-margin-top: 90px;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 inset-x-0 z-50 bg-slate-950/70 backdrop-blur border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="h-16 flex items-center justify-between">
+                <a href="#home" class="flex items-center gap-2">
+                    <div class="p-2 rounded-xl bg-slate-800 border border-white/10">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-sky-300"></i>
+                    </div>
+                    <span class="font-extrabold tracking-wide">Korius Wenda,.S.Kom</span>
+                </a>
+
+                <div class="hidden md:flex items-center gap-6 text-sm">
+                    <a class="nav-link hover:text-sky-300" href="#home">Home</a>
+                    <a class="nav-link hover:text-sky-300" href="#about">About</a>
+                    <a class="nav-link hover:text-sky-300" href="#resume">Download Resume</a>
+                    <a class="nav-link hover:text-sky-300" href="#skills">Skills</a>
+                    <a class="nav-link hover:text-sky-300" href="#projects">Projects</a>
+                    <a class="nav-link hover:text-sky-300" href="#studying">Studying</a>
+                    <a class="nav-link hover:text-sky-300" href="#contact">Contact</a>
+                </div>
+
+                <!-- Mobile button -->
+                <button id="menuBtn"
+                    class="md:hidden grid place-items-center w-10 h-10 rounded-xl border border-white/10">
+                    <i id="menuIcon" data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 animate-in fade-in zoom-in">
+                <div class="mt-2 grid gap-2 text-sm">
+                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#home">Home</a>
+                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#about">About</a>
+                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#resume">Download Resume</a>
+                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#skills">Skills</a>
+                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#projects">Projects</a>
+                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#studying">Studying</a>
+                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="pt-24 ai-glow">
+        <section class="max-w-6xl mx-auto px-4 py-20 min-h-[86vh] grid md:grid-cols-2 items-center gap-10">
+            <div data-aos="fade-right">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-300 border border-emerald-400/20">
+                    <i data-lucide="bot" class="w-4 h-4"></i>
+                    <span class="text-xs">AI-Ready Portfolio</span>
+                </div>
+                <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
+                    Halo, saya <span class="text-sky-400">Kussa</span>
+                </h1>
+                <p id="typing" class="typing-line mt-3 text-slate-300 text-lg"></p>
+                <p class="mt-4 text-slate-300/90 max-w-xl">
+                    Web Developer yang fokus pada UI/UX, performa, dan pengalaman pengguna modern.
+                </p>
+
+                <div class="mt-6 flex flex-wrap items-center gap-3">
+                    <a href="#projects"
+                        class="px-5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 transition inline-flex items-center gap-2">
+                        <i data-lucide="rocket" class="w-4 h-4"></i> Lihat Project
+                    </a>
+                    <a href="#contact"
+                        class="px-5 py-2 rounded-xl border border-white/15 hover:bg-white/5 transition inline-flex items-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i> Kontak
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="fade-left">
+                <div class="absolute -inset-6 rounded-3xl ai-grid"></div>
+                <img src="assets/img/main_photo.jpg" alt="Foto Profil"
+                    class="relative rounded-3xl border border-white/10 shadow-2xl">
+            </div>
+        </section>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-6xl mx-auto px-4 py-24">
+        <div class="grid md:grid-cols-3 gap-10 items-start" data-aos="fade-up">
+            <div class="md:col-span-1">
+                <h2 class="text-3xl font-bold">Tentang <span class="text-sky-400">Saya</span></h2>
+                <p class="mt-2 text-slate-400">Ringkasan singkat profil dan nilai profesional.</p>
+            </div>
+            <div class="md:col-span-2 space-y-4 text-slate-200">
+                <p>Saya membangun aplikasi web modern, scalable, dan ramah pengguna. Berpengalaman di Frontend
+                    (Tailwind, React) dan dasar Backend.</p>
+                <ul class="grid sm:grid-cols-2 gap-2">
+                    <li class="flex items-center gap-2"><i data-lucide="badge-check"
+                            class="w-4 h-4 text-emerald-400"></i> Berorientasi detail</li>
+                    <li class="flex items-center gap-2"><i data-lucide="battery-charging"
+                            class="w-4 h-4 text-emerald-400"></i> Adaptif & cepat belajar</li>
+                    <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i>
+                        UI/UX minded</li>
+                    <li class="flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i>
+                        Tertarik AI & Cloud</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- RESUME -->
+    <section id="resume" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+                <h2 class="text-3xl font-bold">Download <span class="text-sky-400">Resume</span></h2>
+                <p class="mt-2 text-slate-400">Unduh CV PDF terbaru saya.</p>
+            </div>
+            <a href="pdf.html" download
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 transition">
+                <i data-lucide="download" class="w-5 h-5"></i> Unduh PDF
+            </a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SKILLS -->
+    <section id="skills" class="max-w-6xl mx-auto px-4 py-24" data-aos="zoom-in">
+        <h2 class="text-3xl font-bold mb-8">Keahlian</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <!-- item -->
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <span>HTML</span><i data-lucide="code" class="w-5 h-5 text-sky-300"></i>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <span>CSS / Tailwind</span><i data-lucide="layers" class="w-5 h-5 text-sky-300"></i>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <span>JavaScript</span><i data-lucide="square-code" class="w-5 h-5 text-sky-300"></i>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <span>UI/UX</span><i data-lucide="palette" class="w-5 h-5 text-sky-300"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-8">Project</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <article class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                <div class="aspect-video bg-slate-800/50 grid place-items-center">
+                    <i data-lucide="#" class="w-8 h-8 text-slate-400"></i>
+                    <img src="img/personalbranxing.jpeg" alt="Foto Profil">
+                </div>
+                <div class="p-5 space-y-2">
+                    <h3 class="font-semibold">Portfolio Personal </h3>
+                    <p class="text-sm text-slate-400">Website personal modern dengan Tailwind.</p>
+                    <a href="https://github.com/koriuswenda/personalberanding-website.io" class="inline-flex items-center gap-2 text-sky-400 hover:underline">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> Demo
+                    </a>
+                </div>
+            </article>
+            <article class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                <div class="aspect-video bg-slate-800/50 grid place-items-center">
+                    <i data-lucide="#" class="w-8 h-8 text-slate-400"></i>
+                    <img src="img/pemudabpatis.png" alt="Foto Profil">
+                </div>
+                <div class="p-5 space-y-2">
+                    <h3 class="font-semibold">Dashboard SIPemuda Baptis Papua </h3>
+                    <p class="text-sm text-slate-400">sistem Informasi Pemuda baptis Papua - Wilayah JKY .</p>
+                    <a href="https://sipemudabaptis-papua.id/" class="inline-flex items-center gap-2 text-sky-400 hover:underline">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> Demo
+                        
+                    </a>
+                </div>
+            </article>
+            <article class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                <div class="aspect-video bg-slate-800/50 grid place-items-center">
+                    <i data-lucide="#" class="w-8 h-8 text-slate-400"></i>
+                    <img src="img/sacode.png" alt="Foto Profil">
+                </div>
+                <div class="p-5 space-y-2">
+                    <h3 class="font-semibold">Web Komunitas Sacode </h3>
+                    <p class="text-sm text-slate-400">Website Komunitas Koding di Tanah Papua.</p>
+                    <a href="https://www.sacode.web.id/" class="inline-flex items-center gap-2 text-sky-400 hover:underline">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> Demo
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- STUDYING -->
+    <section id="studying" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-left">
+        <h2 class="text-3xl font-bold mb-4">Sedang Dipelajari</h2>
+        <p class="text-slate-300 max-w-3xl">Mendalami React/Next.js, automasi build, serta integrasi AI (LLM) untuk
+            fitur produktivitas.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">React</span>
+            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">Next.js</span>
+            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">Prompting</span>
+            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">Design Systems</span>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-up">
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-3xl font-bold">Kontak & Sosial</h2>
+                <p class="mt-2 text-slate-400">Ayo terhubung. Saya terbuka untuk kolaborasi & peluang baru.</p>
+
+                <div class="mt-6 grid sm:grid-cols-2 gap-3">
+                    <a href="https://wa.me/6285254175093" target="_blank"
+                        class="px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition inline-flex items-center gap-3">
+                        <i data-lucide="phone" class="w-5 h-5 text-emerald-300"></i> WhatsApp
+                    </a>
+                    <a href="https://email.com/koriuswenda.@gmail.com/" target="_blank"
+                        class="px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition inline-flex items-center gap-3">
+                        <i data-lucide="email" class="w-5 h-5 text-sky-300"></i> Email
+                    </a>
+                    <a href="https://github.com/koriuswenda/" target="_blank"
+                        class="px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition inline-flex items-center gap-3">
+                        <i data-lucide="github" class="w-5 h-5"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/korius-wenda-36186a243/" target="_blank"
+                        class="px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition inline-flex items-center gap-3">
+                        <i data-lucide="linkedin" class="w-5 h-5 text-sky-400"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <form class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
+                        placeholder="Nama" />
+                    <input type="email"
+                        class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
+                        placeholder="Email" />
+                </div>
+                <textarea rows="5"
+                    class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
+                    placeholder="Pesan"></textarea>
+                <button type="button"
+                    class="w-full px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 transition inline-flex items-center justify-center gap-2">
+                    <i data-lucide="send"></i> Kirim
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 py-10 text-center text-slate-400 text-sm">
+            © 2025 Kussa.. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init libs
+        AOS.init({ duration: 900, once: true });
+        lucide.createIcons();
+
+        // Mobile menu toggle + icon swap
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const now = mobileMenu.classList.contains('hidden') ? 'menu' : 'x';
+            menuIcon.setAttribute('data-lucide', now);
+            lucide.createIcons();
+        });
+        // Auto close when clicking a link
+        document.querySelectorAll('.menu-link').forEach(a => {
+            a.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Active nav link on scroll
+        const links = [...document.querySelectorAll('.nav-link')];
+        const byHref = Object.fromEntries(links.map(l => [l.getAttribute('href'), l]));
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    const id = '#' + e.target.id;
+                    links.forEach(l => l.classList.remove('active'));
+                    byHref[id]?.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+        document.querySelectorAll('section[id]').forEach(sec => observer.observe(sec));
+
+        // Typing effect loop
+        const typingEl = document.getElementById('typing');
+        const phrases = ['Web Developer', 'UI/UX Enthusiast', 'Fast Learner', 'Open to Work'];
+        let pi = 0, ci = 0, dir = 1, pause = 0;
+        function typeLoop() {
+            if (pause > 0) { pause--; return requestAnimationFrame(typeLoop); }
+            const word = phrases[pi];
+            ci += dir;
+            typingEl.textContent = word.slice(0, ci);
+            if (ci === word.length) { dir = -1; pause = 25; }
+            if (ci === 0 && dir === -1) { dir = 1; pi = (pi + 1) % phrases.length; pause = 8; }
+            setTimeout(typeLoop, 48);
+        }
+        typeLoop();
+    </script>
+</body>
+
+</html>
