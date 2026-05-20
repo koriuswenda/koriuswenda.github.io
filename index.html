@@ -26,6 +26,7 @@
             /* blue */
             --ai3: #a78bfa;
             /* violet */
+            --nav-h: 64px;
         }
 
         html {
@@ -88,11 +89,19 @@
             }
         }
 
-        /* Active link style */
-        .nav-link.active {
-            color: rgb(37 99 235);
-            /* blue-600 */
+        /* Active nav style */
+        .nav-link,
+        .menu-link {
+            border: 1px solid transparent;
+            transition: all .2s ease;
+        }
+
+        .nav-link.active,
+        .menu-link.active {
+            color: rgb(125 211 252);
             font-weight: 600;
+            background: rgba(56, 189, 248, .12);
+            border-color: rgba(125, 211, 252, .35);
         }
 
         /* Section dividers */
@@ -101,8 +110,13 @@
             background: linear-gradient(90deg, transparent, rgba(59, 130, 246, .6), transparent);
         }
 
-        /* Fix offset for fixed navbar */
-        section {
+        /* Section layout + offset for fixed navbar */
+        header[id],
+        section[id] {
+            min-height: calc(100vh - var(--nav-h));
+        }
+
+        section[id] {
             scroll-margin-top: 90px;
         }
     </style>
@@ -122,13 +136,20 @@
                 </a>
 
                 <div class="hidden md:flex items-center gap-6 text-sm">
-                    <a class="nav-link hover:text-sky-300" href="#home">Home</a>
-                    <a class="nav-link hover:text-sky-300" href="#about">About</a>
-                    <a class="nav-link hover:text-sky-300" href="#resume">Download Resume</a>
-                    <a class="nav-link hover:text-sky-300" href="#skills">Skills</a>
-                    <a class="nav-link hover:text-sky-300" href="#projects">Projects</a>
-                    <a class="nav-link hover:text-sky-300" href="#studying">Studying</a>
-                    <a class="nav-link hover:text-sky-300" href="#contact">Contact</a>
+                    <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
+                        href="#home">Home</a>
+                    <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
+                        href="#about">About</a>
+                    <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
+                        href="#resume">Download Resume</a>
+                    <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
+                        href="#skills">Skills</a>
+                    <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
+                        href="#projects">Projects</a>
+                    <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
+                        href="#studying">Studying</a>
+                    <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
+                        href="#contact">Contact</a>
                 </div>
 
                 <!-- Mobile button -->
@@ -141,21 +162,28 @@
             <!-- Mobile menu -->
             <div id="mobileMenu" class="hidden md:hidden pb-4 animate-in fade-in zoom-in">
                 <div class="mt-2 grid gap-2 text-sm">
-                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#home">Home</a>
-                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#about">About</a>
-                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#resume">Download Resume</a>
-                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#skills">Skills</a>
-                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#projects">Projects</a>
-                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#studying">Studying</a>
-                    <a class="menu-link px-3 py-2 rounded-lg hover:bg-white/5" href="#contact">Contact</a>
+                    <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
+                        href="#home">Home</a>
+                    <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
+                        href="#about">About</a>
+                    <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
+                        href="#resume">Download Resume</a>
+                    <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
+                        href="#skills">Skills</a>
+                    <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
+                        href="#projects">Projects</a>
+                    <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
+                        href="#studying">Studying</a>
+                    <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
+                        href="#contact">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <header id="home" class="pt-24 ai-glow">
-        <section class="max-w-6xl mx-auto px-4 py-20 min-h-[86vh] grid md:grid-cols-2 items-center gap-10">
+    <header id="home" class="pt-16 ai-glow">
+        <section class="max-w-6xl mx-auto w-full px-4 py-16 grid md:grid-cols-2 items-center gap-10">
             <div data-aos="fade-right">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-300 border border-emerald-400/20">
@@ -194,12 +222,12 @@
 
     <!-- ABOUT -->
     <section id="about" class="max-w-6xl mx-auto px-4 py-24">
-        <div class="grid md:grid-cols-3 gap-10 items-start" data-aos="fade-up">
-            <div class="md:col-span-1">
+        <div data-aos="fade-up">
+            <div class="text-center max-w-3xl mx-auto">
                 <h2 class="text-3xl font-bold">Tentang <span class="text-sky-400">Saya</span></h2>
                 <p class="mt-2 text-slate-400">Ringkasan singkat profil dan nilai profesional.</p>
             </div>
-            <div class="md:col-span-2 space-y-4 text-slate-200">
+            <div class="mt-10 max-w-4xl mx-auto space-y-4 text-slate-200">
                 <p>Saya membangun aplikasi web modern, scalable, dan ramah pengguna. Berpengalaman di Frontend
                     (Tailwind, React) dan dasar Backend.</p>
                 <ul class="grid sm:grid-cols-2 gap-2">
@@ -215,51 +243,95 @@
             </div>
         </div>
     </section>
-
     <div class="divider"></div>
-
     <!-- RESUME -->
     <section id="resume" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-up">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div>
-                <h2 class="text-3xl font-bold">Download <span class="text-sky-400">Resume</span></h2>
-                <p class="mt-2 text-slate-400">Unduh CV PDF terbaru saya.</p>
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold">Download <span class="text-sky-400">Resume</span></h2>
+            <p class="mt-2 text-slate-400">Unduh CV PDF terbaru saya.</p>
+        </div>
+        <div class="mt-10 grid md:grid-cols-2 gap-8 items-center">
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-8 min-h-[220px] grid place-items-center">
+                <div class="text-center">
+                    <div
+                        class="w-20 h-20 mx-auto rounded-2xl bg-emerald-500/15 border border-emerald-300/30 grid place-items-center">
+                        <i data-lucide="file-text" class="w-10 h-10 text-emerald-300"></i>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-400">Resume Profesional</p>
+                </div>
             </div>
-            <a href="pdf.html" download
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 transition">
-                <i data-lucide="download" class="w-5 h-5"></i> Unduh PDF
-            </a>
+            <div class="space-y-5">
+                <h3 class="text-2xl font-semibold">Curriculum Vitae Terbaru</h3>
+                <p class="text-slate-300">Dokumen ini berisi ringkasan pengalaman, keahlian, dan project yang sudah saya kerjakan.</p>
+                <div>
+                    <a href="pdf.html" download
+                        class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 transition">
+                        <i data-lucide="download" class="w-5 h-5"></i> Unduh PDF
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
-
     <div class="divider"></div>
-
     <!-- SKILLS -->
     <section id="skills" class="max-w-6xl mx-auto px-4 py-24" data-aos="zoom-in">
-        <h2 class="text-3xl font-bold mb-8">Keahlian</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <!-- item -->
-            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
-                <span>HTML</span><i data-lucide="code" class="w-5 h-5 text-sky-300"></i>
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold">Keahlian</h2>
+            <p class="mt-2 text-slate-400">Teknologi dan pendekatan kerja yang saya gunakan untuk membangun produk digital.</p>
+        </div>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/15 grid place-items-center border border-sky-300/20">
+                    <i data-lucide="code" class="w-6 h-6 text-sky-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">HTML</h3>
+                <p class="mt-2 text-sm text-slate-400">Menyusun struktur semantik web yang rapi dan mudah dipelihara.</p>
             </div>
-            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
-                <span>CSS / Tailwind</span><i data-lucide="layers" class="w-5 h-5 text-sky-300"></i>
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/15 grid place-items-center border border-sky-300/20">
+                    <i data-lucide="layers" class="w-6 h-6 text-sky-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">CSS / Tailwind</h3>
+                <p class="mt-2 text-sm text-slate-400">Membuat tampilan modern, responsif, dan konsisten di berbagai perangkat.</p>
             </div>
-            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
-                <span>JavaScript</span><i data-lucide="square-code" class="w-5 h-5 text-sky-300"></i>
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/15 grid place-items-center border border-sky-300/20">
+                    <i data-lucide="square-code" class="w-6 h-6 text-sky-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">JavaScript</h3>
+                <p class="mt-2 text-sm text-slate-400">Menambahkan interaktivitas dan pengalaman pengguna yang dinamis.</p>
             </div>
-            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
-                <span>UI/UX</span><i data-lucide="palette" class="w-5 h-5 text-sky-300"></i>
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/15 grid place-items-center border border-sky-300/20">
+                    <i data-lucide="palette" class="w-6 h-6 text-sky-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">UI/UX</h3>
+                <p class="mt-2 text-sm text-slate-400">Merancang antarmuka intuitif yang fokus pada kenyamanan pengguna.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/15 grid place-items-center border border-emerald-300/20">
+                    <i data-lucide="database" class="w-6 h-6 text-emerald-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">Laravel</h3>
+                <p class="mt-2 text-sm text-slate-400">Membangun backend terstruktur untuk aplikasi web yang scalable.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
+                <div class="w-12 h-12 rounded-xl bg-violet-500/15 grid place-items-center border border-violet-300/20">
+                    <i data-lucide="sparkles" class="w-6 h-6 text-violet-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">Vibe Coding</h3>
+                <p class="mt-2 text-sm text-slate-400">Eksplorasi workflow kreatif dan cepat untuk prototyping solusi digital.</p>
             </div>
         </div>
     </section>
-
     <div class="divider"></div>
-
     <!-- PROJECTS -->
     <section id="projects" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-up">
-        <h2 class="text-3xl font-bold mb-8">Project</h2>
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold">Project</h2>
+            <p class="mt-2 text-slate-400">Beberapa karya yang merepresentasikan pengalaman saya dalam pengembangan web.</p>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
             <article class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition">
                 <div class="aspect-video bg-slate-800/50 grid place-items-center">
                     <i data-lucide="#" class="w-8 h-8 text-slate-400"></i>
@@ -283,7 +355,6 @@
                     <p class="text-sm text-slate-400">sistem Informasi Pemuda baptis Papua - Wilayah JKY .</p>
                     <a href="https://sipemudabaptis-papua.id/" class="inline-flex items-center gap-2 text-sky-400 hover:underline">
                         <i data-lucide="external-link" class="w-4 h-4"></i> Demo
-                        
                     </a>
                 </div>
             </article>
@@ -302,32 +373,34 @@
             </article>
         </div>
     </section>
-
     <div class="divider"></div>
-
     <!-- STUDYING -->
     <section id="studying" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-left">
-        <h2 class="text-3xl font-bold mb-4">Sedang Dipelajari</h2>
-        <p class="text-slate-300 max-w-3xl">Mendalami React/Next.js, automasi build, serta integrasi AI (LLM) untuk
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold">Sedang Dipelajari</h2>
+            <p class="mt-2 text-slate-400">Fokus pembelajaran untuk meningkatkan kualitas solusi dan produktivitas kerja.</p>
+        </div>
+        <p class="mt-6 text-slate-300 max-w-3xl mx-auto text-center">Mendalami React/Next.js, automasi build, serta integrasi AI (LLM) untuk
             fitur produktivitas.</p>
-        <div class="mt-6 flex flex-wrap gap-3">
+        <div class="mt-6 flex flex-wrap gap-3 justify-center">
             <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">React</span>
             <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">Next.js</span>
             <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">Prompting</span>
             <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">Design Systems</span>
         </div>
     </section>
-
     <div class="divider"></div>
-
     <!-- CONTACT -->
     <section id="contact" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-up">
-        <div class="grid lg:grid-cols-2 gap-10">
-            <div>
-                <h2 class="text-3xl font-bold">Kontak & Sosial</h2>
-                <p class="mt-2 text-slate-400">Ayo terhubung. Saya terbuka untuk kolaborasi & peluang baru.</p>
-
-                <div class="mt-6 grid sm:grid-cols-2 gap-3">
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold">Kontak & Sosial</h2>
+            <p class="mt-2 text-slate-400">Ayo terhubung. Saya terbuka untuk kolaborasi & peluang baru.</p>
+        </div>
+        <div class="mt-10 grid lg:grid-cols-2 gap-10">
+            <div class="space-y-4">
+                <h3 class="text-xl font-semibold">Media Sosial</h3>
+                <p class="text-slate-400">Silakan pilih channel yang paling nyaman untuk terhubung.</p>
+                <div class="grid sm:grid-cols-2 gap-3">
                     <a href="https://wa.me/6285254175093" target="_blank"
                         class="px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition inline-flex items-center gap-3">
                         <i data-lucide="phone" class="w-5 h-5 text-emerald-300"></i> WhatsApp
@@ -346,19 +419,19 @@
                     </a>
                 </div>
             </div>
-
-            <form class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
+            <form id="contactForm" class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
                 <div class="grid md:grid-cols-2 gap-4">
-                    <input class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
+                    <input name="name"
+                        class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
                         placeholder="Nama" />
-                    <input type="email"
+                    <input type="email" name="email"
                         class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
                         placeholder="Email" />
                 </div>
-                <textarea rows="5"
+                <textarea rows="5" name="message"
                     class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
                     placeholder="Pesan"></textarea>
-                <button type="button"
+                <button type="submit"
                     class="w-full px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 transition inline-flex items-center justify-center gap-2">
                     <i data-lucide="send"></i> Kirim
                 </button>
@@ -398,19 +471,47 @@
             });
         });
 
-        // Active nav link on scroll
-        const links = [...document.querySelectorAll('.nav-link')];
-        const byHref = Object.fromEntries(links.map(l => [l.getAttribute('href'), l]));
+        // Active nav link on scroll (desktop + mobile)
+        const navItems = [...document.querySelectorAll('.nav-link, .menu-link')];
+        const byHref = navItems.reduce((acc, item) => {
+            const href = item.getAttribute('href');
+            if (!acc[href]) acc[href] = [];
+            acc[href].push(item);
+            return acc;
+        }, {});
+        const setActiveLink = (hash) => {
+            navItems.forEach(item => item.classList.remove('active'));
+            (byHref[hash] || []).forEach(item => item.classList.add('active'));
+        };
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    const id = '#' + e.target.id;
-                    links.forEach(l => l.classList.remove('active'));
-                    byHref[id]?.classList.add('active');
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = '#' + entry.target.id;
+                    setActiveLink(id);
                 }
             });
         }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-        document.querySelectorAll('section[id]').forEach(sec => observer.observe(sec));
+        document.querySelectorAll('header[id], section[id]').forEach(sec => observer.observe(sec));
+        setActiveLink(window.location.hash || '#home');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => setActiveLink(item.getAttribute('href')));
+        });
+
+        // Contact form -> WhatsApp
+        const contactForm = document.getElementById('contactForm');
+        contactForm?.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(contactForm);
+            const name = (formData.get('name') || '').toString().trim();
+            const email = (formData.get('email') || '').toString().trim();
+            const message = (formData.get('message') || '').toString().trim();
+            const lines = ['Halo Kussa, saya ingin terhubung dari website portfolio.'];
+            if (name) lines.push(`Nama: ${name}`);
+            if (email) lines.push(`Email: ${email}`);
+            if (message) lines.push(`Pesan: ${message}`);
+            const text = encodeURIComponent(lines.join('\n'));
+            window.open(`https://wa.me/6285254175093?text=${text}`, '_blank', 'noopener');
+        });
 
         // Typing effect loop
         const typingEl = document.getElementById('typing');
