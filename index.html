@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kussa – Personal Branding</title>
+    <title>Kussa – Branding Personal</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,8 +12,9 @@
     <!-- AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        referrerpolicy="no-referrer" />
 
     <!-- Fonts (opsional) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
@@ -119,6 +120,22 @@
         section[id] {
             scroll-margin-top: 90px;
         }
+
+        .site-container {
+            max-width: 72rem;
+            margin-inline: auto;
+            padding-inline: 1rem;
+        }
+
+        .section-shell {
+            padding-block: 6rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-shell {
+                padding-block: 4.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -126,36 +143,35 @@
 
     <!-- NAVBAR -->
     <nav class="fixed top-0 inset-x-0 z-50 bg-slate-950/70 backdrop-blur border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="site-container">
             <div class="h-16 flex items-center justify-between">
-                <a href="#home" class="flex items-center gap-2">
-                    <div class="p-2 rounded-xl bg-slate-800 border border-white/10">
-                        <i data-lucide="sparkles" class="w-5 h-5 text-sky-300"></i>
-                    </div>
+                <a href="#home" class="flex items-center gap-3">
+                    <img src="./img/main_photo.jpg" alt="Logo situs"
+                        class="w-10 h-10 rounded-full object-cover object-center ring-2 ring-sky-400/40 shadow-md shadow-sky-500/20">
                     <span class="font-extrabold tracking-wide">Korius Wenda,.S.Kom</span>
                 </a>
 
                 <div class="hidden md:flex items-center gap-6 text-sm">
                     <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
-                        href="#home">Home</a>
+                        href="#home">Beranda</a>
                     <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
-                        href="#about">About</a>
+                        href="#about">Tentang</a>
                     <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
-                        href="#resume">Download Resume</a>
+                        href="#resume">Unduh Resume</a>
                     <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
-                        href="#skills">Skills</a>
+                        href="#skills">Keahlian</a>
                     <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
-                        href="#projects">Projects</a>
+                        href="#projects">Proyek</a>
                     <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
-                        href="#studying">Studying</a>
+                        href="#studying">Sedang Dipelajari</a>
                     <a class="nav-link px-3 py-2 rounded-lg border border-transparent hover:text-sky-300 hover:bg-white/5"
-                        href="#contact">Contact</a>
+                        href="#contact">Kontak</a>
                 </div>
 
                 <!-- Mobile button -->
                 <button id="menuBtn"
                     class="md:hidden grid place-items-center w-10 h-10 rounded-xl border border-white/10">
-                    <i id="menuIcon" data-lucide="menu" class="w-5 h-5"></i>
+                    <i id="menuIcon" class="fa-solid fa-bars text-base"></i>
                 </button>
             </div>
 
@@ -163,19 +179,19 @@
             <div id="mobileMenu" class="hidden md:hidden pb-4 animate-in fade-in zoom-in">
                 <div class="mt-2 grid gap-2 text-sm">
                     <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
-                        href="#home">Home</a>
+                        href="#home">Beranda</a>
                     <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
-                        href="#about">About</a>
+                        href="#about">Tentang</a>
                     <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
-                        href="#resume">Download Resume</a>
+                        href="#resume">Unduh Resume</a>
                     <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
-                        href="#skills">Skills</a>
+                        href="#skills">Keahlian</a>
                     <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
-                        href="#projects">Projects</a>
+                        href="#projects">Proyek</a>
                     <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
-                        href="#studying">Studying</a>
+                        href="#studying">Sedang Dipelajari</a>
                     <a class="menu-link px-3 py-2 rounded-lg border border-transparent hover:bg-white/5 hover:text-sky-300"
-                        href="#contact">Contact</a>
+                        href="#contact">Kontak</a>
                 </div>
             </div>
         </div>
@@ -183,37 +199,37 @@
 
     <!-- HERO -->
     <header id="home" class="pt-16 ai-glow">
-        <section class="max-w-6xl mx-auto w-full px-4 py-16 grid md:grid-cols-2 items-center gap-10">
+        <section class="site-container section-shell grid md:grid-cols-2 items-center gap-10">
             <div data-aos="fade-right">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-300 border border-emerald-400/20">
-                    <i data-lucide="bot" class="w-4 h-4"></i>
-                    <span class="text-xs">AI-Ready Portfolio</span>
+                    <i class="fa-solid fa-robot text-sm"></i>
+                    <span class="text-xs">Portofolio Siap AI</span>
                 </div>
                 <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
                     Halo, saya <span class="text-sky-400">Kussa</span>
                 </h1>
                 <p id="typing" class="typing-line mt-3 text-slate-300 text-lg"></p>
                 <p class="mt-4 text-slate-300/90 max-w-xl">
-                    Web Developer yang fokus pada UI/UX, performa, dan pengalaman pengguna modern.
+                    Pengembang web yang fokus pada UI/UX, performa, dan pengalaman pengguna modern.
                 </p>
 
                 <div class="mt-6 flex flex-wrap items-center gap-3">
                     <a href="#projects"
                         class="px-5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 transition inline-flex items-center gap-2">
-                        <i data-lucide="rocket" class="w-4 h-4"></i> Lihat Project
+                        <i class="fa-solid fa-rocket text-sm"></i> Lihat Proyek
                     </a>
                     <a href="#contact"
                         class="px-5 py-2 rounded-xl border border-white/15 hover:bg-white/5 transition inline-flex items-center gap-2">
-                        <i data-lucide="send" class="w-4 h-4"></i> Kontak
+                        <i class="fa-solid fa-paper-plane text-sm"></i> Kontak
                     </a>
                 </div>
             </div>
 
             <div class="relative" data-aos="fade-left">
                 <div class="absolute -inset-6 rounded-3xl ai-grid"></div>
-                <img src="assets/img/main_photo.jpg" alt="Foto Profil"
-                    class="relative rounded-3xl border border-white/10 shadow-2xl">
+                <img src="./img/main_photo.jpg" alt="Foto Profil"
+                    class="relative w-full max-w-md mx-auto rounded-3xl border border-white/10 shadow-2xl object-cover object-center">
             </div>
         </section>
     </header>
@@ -221,33 +237,31 @@
     <div class="divider"></div>
 
     <!-- ABOUT -->
-    <section id="about" class="max-w-6xl mx-auto px-4 py-24">
+    <section id="about" class="site-container section-shell">
         <div data-aos="fade-up">
-            <div class="text-center max-w-3xl mx-auto">
+            <div class="text-center w-full">
                 <h2 class="text-3xl font-bold">Tentang <span class="text-sky-400">Saya</span></h2>
                 <p class="mt-2 text-slate-400">Ringkasan singkat profil dan nilai profesional.</p>
             </div>
-            <div class="mt-10 max-w-4xl mx-auto space-y-4 text-slate-200">
-                <p>Saya membangun aplikasi web modern, scalable, dan ramah pengguna. Berpengalaman di Frontend
-                    (Tailwind, React) dan dasar Backend.</p>
+            <div class="mt-10 w-full space-y-4 text-slate-200">
+                <p>Saya membangun aplikasi web modern, mudah dikembangkan, dan ramah pengguna. Berpengalaman pada
+                    pengembangan antarmuka (Tailwind, React) serta dasar pengembangan sisi server.</p>
                 <ul class="grid sm:grid-cols-2 gap-2">
-                    <li class="flex items-center gap-2"><i data-lucide="badge-check"
-                            class="w-4 h-4 text-emerald-400"></i> Berorientasi detail</li>
-                    <li class="flex items-center gap-2"><i data-lucide="battery-charging"
-                            class="w-4 h-4 text-emerald-400"></i> Adaptif & cepat belajar</li>
-                    <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i>
-                        UI/UX minded</li>
-                    <li class="flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i>
-                        Tertarik AI & Cloud</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Berorientasi detail</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-emerald-400"></i> Adaptif & cepat belajar</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i>
+                        Berorientasi UI/UX</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-microchip text-emerald-400"></i>
+                        Tertarik AI & komputasi awan</li>
                 </ul>
             </div>
         </div>
     </section>
     <div class="divider"></div>
     <!-- RESUME -->
-    <section id="resume" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-up">
-        <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold">Download <span class="text-sky-400">Resume</span></h2>
+    <section id="resume" class="site-container section-shell" data-aos="fade-up">
+        <div class="text-center w-full">
+            <h2 class="text-3xl font-bold">Unduh <span class="text-sky-400">Resume</span></h2>
             <p class="mt-2 text-slate-400">Unduh CV PDF terbaru saya.</p>
         </div>
         <div class="mt-10 grid md:grid-cols-2 gap-8 items-center">
@@ -255,18 +269,18 @@
                 <div class="text-center">
                     <div
                         class="w-20 h-20 mx-auto rounded-2xl bg-emerald-500/15 border border-emerald-300/30 grid place-items-center">
-                        <i data-lucide="file-text" class="w-10 h-10 text-emerald-300"></i>
+                        <i class="fa-solid fa-file-lines text-4xl text-emerald-300"></i>
                     </div>
                     <p class="mt-4 text-sm text-slate-400">Resume Profesional</p>
                 </div>
             </div>
             <div class="space-y-5">
                 <h3 class="text-2xl font-semibold">Curriculum Vitae Terbaru</h3>
-                <p class="text-slate-300">Dokumen ini berisi ringkasan pengalaman, keahlian, dan project yang sudah saya kerjakan.</p>
+                <p class="text-slate-300">Dokumen ini berisi ringkasan pengalaman, keahlian, dan proyek yang sudah saya kerjakan.</p>
                 <div>
                     <a href="pdf.html" download
                         class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 transition">
-                        <i data-lucide="download" class="w-5 h-5"></i> Unduh PDF
+                        <i class="fa-solid fa-download"></i> Unduh PDF
                     </a>
                 </div>
             </div>
@@ -274,100 +288,100 @@
     </section>
     <div class="divider"></div>
     <!-- SKILLS -->
-    <section id="skills" class="max-w-6xl mx-auto px-4 py-24" data-aos="zoom-in">
-        <div class="text-center max-w-3xl mx-auto">
+    <section id="skills" class="site-container section-shell" data-aos="zoom-in">
+        <div class="text-center w-full">
             <h2 class="text-3xl font-bold">Keahlian</h2>
             <p class="mt-2 text-slate-400">Teknologi dan pendekatan kerja yang saya gunakan untuk membangun produk digital.</p>
         </div>
         <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
                 <div class="w-12 h-12 rounded-xl bg-sky-500/15 grid place-items-center border border-sky-300/20">
-                    <i data-lucide="code" class="w-6 h-6 text-sky-300"></i>
+                    <i class="fa-solid fa-code text-sky-300"></i>
                 </div>
                 <h3 class="mt-4 font-semibold">HTML</h3>
                 <p class="mt-2 text-sm text-slate-400">Menyusun struktur semantik web yang rapi dan mudah dipelihara.</p>
             </div>
             <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
                 <div class="w-12 h-12 rounded-xl bg-sky-500/15 grid place-items-center border border-sky-300/20">
-                    <i data-lucide="layers" class="w-6 h-6 text-sky-300"></i>
+                    <i class="fa-solid fa-layer-group text-sky-300"></i>
                 </div>
                 <h3 class="mt-4 font-semibold">CSS / Tailwind</h3>
                 <p class="mt-2 text-sm text-slate-400">Membuat tampilan modern, responsif, dan konsisten di berbagai perangkat.</p>
             </div>
             <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
                 <div class="w-12 h-12 rounded-xl bg-sky-500/15 grid place-items-center border border-sky-300/20">
-                    <i data-lucide="square-code" class="w-6 h-6 text-sky-300"></i>
+                    <i class="fa-solid fa-file-code text-sky-300"></i>
                 </div>
                 <h3 class="mt-4 font-semibold">JavaScript</h3>
                 <p class="mt-2 text-sm text-slate-400">Menambahkan interaktivitas dan pengalaman pengguna yang dinamis.</p>
             </div>
             <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
                 <div class="w-12 h-12 rounded-xl bg-sky-500/15 grid place-items-center border border-sky-300/20">
-                    <i data-lucide="palette" class="w-6 h-6 text-sky-300"></i>
+                    <i class="fa-solid fa-palette text-sky-300"></i>
                 </div>
                 <h3 class="mt-4 font-semibold">UI/UX</h3>
                 <p class="mt-2 text-sm text-slate-400">Merancang antarmuka intuitif yang fokus pada kenyamanan pengguna.</p>
             </div>
             <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
                 <div class="w-12 h-12 rounded-xl bg-emerald-500/15 grid place-items-center border border-emerald-300/20">
-                    <i data-lucide="database" class="w-6 h-6 text-emerald-300"></i>
+                    <i class="fa-solid fa-database text-emerald-300"></i>
                 </div>
                 <h3 class="mt-4 font-semibold">Laravel</h3>
-                <p class="mt-2 text-sm text-slate-400">Membangun backend terstruktur untuk aplikasi web yang scalable.</p>
+                <p class="mt-2 text-sm text-slate-400">Membangun backend terstruktur untuk aplikasi web yang mudah ditingkatkan.</p>
             </div>
             <div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center flex flex-col items-center">
                 <div class="w-12 h-12 rounded-xl bg-violet-500/15 grid place-items-center border border-violet-300/20">
-                    <i data-lucide="sparkles" class="w-6 h-6 text-violet-300"></i>
+                    <i class="fa-solid fa-lightbulb text-violet-300"></i>
                 </div>
-                <h3 class="mt-4 font-semibold">Vibe Coding</h3>
-                <p class="mt-2 text-sm text-slate-400">Eksplorasi workflow kreatif dan cepat untuk prototyping solusi digital.</p>
+                <h3 class="mt-4 font-semibold">Pemrograman Kreatif</h3>
+                <p class="mt-2 text-sm text-slate-400">Eksplorasi alur kerja kreatif dan cepat untuk membuat purwarupa solusi digital.</p>
             </div>
         </div>
     </section>
     <div class="divider"></div>
     <!-- PROJECTS -->
-    <section id="projects" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-up">
-        <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold">Project</h2>
+    <section id="projects" class="site-container section-shell" data-aos="fade-up">
+        <div class="text-center w-full">
+            <h2 class="text-3xl font-bold">Proyek</h2>
             <p class="mt-2 text-slate-400">Beberapa karya yang merepresentasikan pengalaman saya dalam pengembangan web.</p>
         </div>
         <div class="mt-8 grid md:grid-cols-3 gap-6">
             <article class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition">
                 <div class="aspect-video bg-slate-800/50 grid place-items-center">
-                    <i data-lucide="#" class="w-8 h-8 text-slate-400"></i>
+                    <i class="fa-solid fa-image text-slate-400 text-2xl"></i>
                     <img src="img/personalbranxing.jpeg" alt="Foto Profil">
                 </div>
                 <div class="p-5 space-y-2">
-                    <h3 class="font-semibold">Portfolio Personal </h3>
+                    <h3 class="font-semibold">Portofolio Personal </h3>
                     <p class="text-sm text-slate-400">Website personal modern dengan Tailwind.</p>
                     <a href="https://github.com/koriuswenda/personalberanding-website.io" class="inline-flex items-center gap-2 text-sky-400 hover:underline">
-                        <i data-lucide="external-link" class="w-4 h-4"></i> Demo
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i> Kunjungi
                     </a>
                 </div>
             </article>
             <article class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition">
                 <div class="aspect-video bg-slate-800/50 grid place-items-center">
-                    <i data-lucide="#" class="w-8 h-8 text-slate-400"></i>
+                    <i class="fa-solid fa-image text-slate-400 text-2xl"></i>
                     <img src="img/pemudabpatis.png" alt="Foto Profil">
                 </div>
                 <div class="p-5 space-y-2">
                     <h3 class="font-semibold">Dashboard SIPemuda Baptis Papua </h3>
-                    <p class="text-sm text-slate-400">sistem Informasi Pemuda baptis Papua - Wilayah JKY .</p>
+                    <p class="text-sm text-slate-400">Sistem informasi Pemuda Baptis Papua wilayah JKY.</p>
                     <a href="https://sipemudabaptis-papua.id/" class="inline-flex items-center gap-2 text-sky-400 hover:underline">
-                        <i data-lucide="external-link" class="w-4 h-4"></i> Demo
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i> Kunjungi
                     </a>
                 </div>
             </article>
             <article class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition">
                 <div class="aspect-video bg-slate-800/50 grid place-items-center">
-                    <i data-lucide="#" class="w-8 h-8 text-slate-400"></i>
+                    <i class="fa-solid fa-image text-slate-400 text-2xl"></i>
                     <img src="img/sacode.png" alt="Foto Profil">
                 </div>
                 <div class="p-5 space-y-2">
                     <h3 class="font-semibold">Web Komunitas Sacode </h3>
                     <p class="text-sm text-slate-400">Website Komunitas Koding di Tanah Papua.</p>
                     <a href="https://www.sacode.web.id/" class="inline-flex items-center gap-2 text-sky-400 hover:underline">
-                        <i data-lucide="external-link" class="w-4 h-4"></i> Demo
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i> Kunjungi
                     </a>
                 </div>
             </article>
@@ -375,73 +389,108 @@
     </section>
     <div class="divider"></div>
     <!-- STUDYING -->
-    <section id="studying" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-left">
-        <div class="text-center max-w-3xl mx-auto">
+    <section id="studying" class="site-container section-shell" data-aos="fade-left">
+        <div class="text-center w-full">
             <h2 class="text-3xl font-bold">Sedang Dipelajari</h2>
             <p class="mt-2 text-slate-400">Fokus pembelajaran untuk meningkatkan kualitas solusi dan produktivitas kerja.</p>
         </div>
-        <p class="mt-6 text-slate-300 max-w-3xl mx-auto text-center">Mendalami React/Next.js, automasi build, serta integrasi AI (LLM) untuk
-            fitur produktivitas.</p>
-        <div class="mt-6 flex flex-wrap gap-3 justify-center">
-            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">React</span>
-            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">Next.js</span>
-            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">Prompting</span>
-            <span class="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sm">Design Systems</span>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <article class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/15 border border-sky-300/20 grid place-items-center">
+                    <i class="fa-solid fa-layer-group text-sky-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">React & Next.js</h3>
+                <p class="mt-2 text-sm text-slate-400">Mendalami arsitektur komponen dan optimasi render untuk aplikasi web modern.</p>
+            </article>
+            <article class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-300/20 grid place-items-center">
+                    <i class="fa-solid fa-robot text-emerald-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">Integrasi AI (LLM)</h3>
+                <p class="mt-2 text-sm text-slate-400">Mempelajari penerapan AI untuk otomatisasi konten dan peningkatan produktivitas.</p>
+            </article>
+            <article class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                <div class="w-12 h-12 rounded-xl bg-violet-500/15 border border-violet-300/20 grid place-items-center">
+                    <i class="fa-solid fa-gauge-high text-violet-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">Optimasi Performa Web</h3>
+                <p class="mt-2 text-sm text-slate-400">Mengasah teknik peningkatan kecepatan muat dan efisiensi aset halaman.</p>
+            </article>
+            <article class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-300/20 grid place-items-center">
+                    <i class="fa-solid fa-swatchbook text-amber-300"></i>
+                </div>
+                <h3 class="mt-4 font-semibold">Sistem Desain</h3>
+                <p class="mt-2 text-sm text-slate-400">Menyusun komponen UI yang konsisten agar pengalaman pengguna lebih terarah.</p>
+            </article>
         </div>
     </section>
     <div class="divider"></div>
     <!-- CONTACT -->
-    <section id="contact" class="max-w-6xl mx-auto px-4 py-24" data-aos="fade-up">
-        <div class="text-center max-w-3xl mx-auto">
+    <section id="contact" class="site-container section-shell" data-aos="fade-up">
+        <div class="text-center w-full">
             <h2 class="text-3xl font-bold">Kontak & Sosial</h2>
             <p class="mt-2 text-slate-400">Ayo terhubung. Saya terbuka untuk kolaborasi & peluang baru.</p>
         </div>
         <div class="mt-10 grid lg:grid-cols-2 gap-10">
             <div class="space-y-4">
                 <h3 class="text-xl font-semibold">Media Sosial</h3>
-                <p class="text-slate-400">Silakan pilih channel yang paling nyaman untuk terhubung.</p>
+                <p class="text-slate-400">Silakan pilih saluran yang paling nyaman untuk terhubung.</p>
                 <div class="grid sm:grid-cols-2 gap-3">
                     <a href="https://wa.me/6285254175093" target="_blank"
                         class="px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition inline-flex items-center gap-3">
-                        <i data-lucide="phone" class="w-5 h-5 text-emerald-300"></i> WhatsApp
+                        <i class="fa-brands fa-whatsapp text-lg text-emerald-300"></i> WhatsApp
                     </a>
                     <a href="https://email.com/koriuswenda.@gmail.com/" target="_blank"
                         class="px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition inline-flex items-center gap-3">
-                        <i data-lucide="email" class="w-5 h-5 text-sky-300"></i> Email
+                        <i class="fa-solid fa-envelope text-lg text-sky-300"></i> Email
                     </a>
                     <a href="https://github.com/koriuswenda/" target="_blank"
                         class="px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition inline-flex items-center gap-3">
-                        <i data-lucide="github" class="w-5 h-5"></i> GitHub
+                        <i class="fa-brands fa-github text-lg"></i> GitHub
                     </a>
                     <a href="https://www.linkedin.com/in/korius-wenda-36186a243/" target="_blank"
                         class="px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition inline-flex items-center gap-3">
-                        <i data-lucide="linkedin" class="w-5 h-5 text-sky-400"></i> LinkedIn
+                        <i class="fa-brands fa-linkedin text-lg text-sky-400"></i> LinkedIn
                     </a>
                 </div>
             </div>
             <form id="contactForm" class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input name="name"
-                        class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
-                        placeholder="Nama" />
-                    <input type="email" name="email"
-                        class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
-                        placeholder="Email" />
+                <div class="space-y-2">
+                    <label for="fullName" class="text-sm text-slate-300">Nama Lengkap</label>
+                    <input id="fullName" name="fullName"
+                        class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
+                        placeholder="Masukkan nama lengkap" />
                 </div>
-                <textarea rows="5" name="message"
-                    class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
-                    placeholder="Pesan"></textarea>
+                <div class="space-y-2">
+                    <label for="email" class="text-sm text-slate-300">Email</label>
+                    <input id="email" type="email" name="email"
+                        class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
+                        placeholder="Masukkan email aktif" />
+                </div>
+                <div class="space-y-2">
+                    <label for="phone" class="text-sm text-slate-300">Nomor HP</label>
+                    <input id="phone" type="tel" name="phone"
+                        class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
+                        placeholder="Contoh: 0812xxxxxxxx" />
+                </div>
+                <div class="space-y-2">
+                    <label for="message" class="text-sm text-slate-300">Isi Pesan</label>
+                    <textarea id="message" rows="5" name="message"
+                        class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 placeholder-slate-400"
+                        placeholder="Tulis pesan Anda"></textarea>
+                </div>
                 <button type="submit"
                     class="w-full px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 transition inline-flex items-center justify-center gap-2">
-                    <i data-lucide="send"></i> Kirim
+                    <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
                 </button>
             </form>
         </div>
     </section>
 
     <footer class="border-t border-white/10">
-        <div class="max-w-6xl mx-auto px-4 py-10 text-center text-slate-400 text-sm">
-            © 2025 Kussa.. All rights reserved.
+        <div class="site-container py-10 text-center text-slate-400 text-sm">
+            © 2025 Kussa.. Semua hak dilindungi.
         </div>
     </footer>
 
@@ -450,7 +499,6 @@
     <script>
         // Init libs
         AOS.init({ duration: 900, once: true });
-        lucide.createIcons();
 
         // Mobile menu toggle + icon swap
         const menuBtn = document.getElementById('menuBtn');
@@ -458,16 +506,16 @@
         const menuIcon = document.getElementById('menuIcon');
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            const now = mobileMenu.classList.contains('hidden') ? 'menu' : 'x';
-            menuIcon.setAttribute('data-lucide', now);
-            lucide.createIcons();
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            menuIcon.classList.toggle('fa-bars', !isOpen);
+            menuIcon.classList.toggle('fa-xmark', isOpen);
         });
         // Auto close when clicking a link
         document.querySelectorAll('.menu-link').forEach(a => {
             a.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
-                menuIcon.setAttribute('data-lucide', 'menu');
-                lucide.createIcons();
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-xmark');
             });
         });
 
@@ -502,20 +550,22 @@
         contactForm?.addEventListener('submit', (event) => {
             event.preventDefault();
             const formData = new FormData(contactForm);
-            const name = (formData.get('name') || '').toString().trim();
+            const fullName = (formData.get('fullName') || '').toString().trim();
             const email = (formData.get('email') || '').toString().trim();
+            const phone = (formData.get('phone') || '').toString().trim();
             const message = (formData.get('message') || '').toString().trim();
-            const lines = ['Halo Kussa, saya ingin terhubung dari website portfolio.'];
-            if (name) lines.push(`Nama: ${name}`);
+            const lines = ['Halo Kussa, saya ingin terhubung dari situs portofolio.'];
+            if (fullName) lines.push(`Nama Lengkap: ${fullName}`);
             if (email) lines.push(`Email: ${email}`);
-            if (message) lines.push(`Pesan: ${message}`);
+            if (phone) lines.push(`Nomor HP: ${phone}`);
+            if (message) lines.push(`Isi Pesan: ${message}`);
             const text = encodeURIComponent(lines.join('\n'));
             window.open(`https://wa.me/6285254175093?text=${text}`, '_blank', 'noopener');
         });
 
         // Typing effect loop
         const typingEl = document.getElementById('typing');
-        const phrases = ['Web Developer', 'UI/UX Enthusiast', 'Fast Learner', 'Open to Work'];
+        const phrases = ['Pengembang Web', 'Antusias UI/UX', 'Cepat Belajar', 'Terbuka untuk Kolaborasi'];
         let pi = 0, ci = 0, dir = 1, pause = 0;
         function typeLoop() {
             if (pause > 0) { pause--; return requestAnimationFrame(typeLoop); }
